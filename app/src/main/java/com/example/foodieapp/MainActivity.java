@@ -11,6 +11,8 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOException;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -25,13 +27,57 @@ public class MainActivity extends AppCompatActivity {
     public void testClick(View v){
 
         TextView see=findViewById(R.id.textView2);
-        EditText password= findViewById(R.id.Password);
-        EditText email= findViewById(R.id.EmailAddress);
+
+
         Intent next=new Intent(MainActivity.this,MainPage.class);
         startActivity(next);
 
 
-        see.setText("Your email is : "+email.getText()+"\n your password is "+password.getAutoSizeTextType()+" "+ Utiels.passwordValidateCheck(password.getText().toString()));
+        see.setText("Your email is : "+"\n your password is ");
+
+
+    }
+    public void signIn(View v){
+        EditText email= findViewById(R.id.EmailAddress);
+        EditText password= findViewById(R.id.Password);
+        EditText secondPassword= findViewById(R.id.Password1);
+        boolean eamilCheck=false;
+        boolean passwordCheck=false;
+        boolean passwordSecondCheck=false;
+
+        try {
+            if(Utiels.emailValidationSignIn(email.getText().toString())){// if it is validated store it
+                eamilCheck=true;
+            }else {
+                email.setError("Email is not valid ");
+            }
+        } catch (Exception e) {
+            System.out.println("Email problem"+ e);
+        }
+        if(Utiels.passwordValidateCheck(password.getText().toString())){
+            passwordCheck=true;
+
+        }else{
+            // if it is not satisfy the password
+            password.setError("Password is not valid");
+            Toast.makeText(this,"The account password Should be\n" +
+                    "At least 9 characters" +
+                    "Has at least one letter\n" +
+                    "With at least one digit\n" +
+                    "Without any space",Toast.LENGTH_LONG).show();
+        }
+        // check if the second password is same as the first password
+        if(password.getText().toString().equals(secondPassword.getText().toString())){
+            passwordSecondCheck=true;
+        }else{// if it is not
+            secondPassword.setError("Passwords are not the same");
+        }
+
+
+
+
+
+
 
 
     }

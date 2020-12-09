@@ -1,5 +1,12 @@
 package com.example.foodieapp;
 
+import android.util.Patterns;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
 public class Utiels {
 
     public static boolean passwordValidateCheck(String password){
@@ -33,6 +40,26 @@ public class Utiels {
 
         }else
             return false;
+
+    }
+    public static  boolean emailValidationSignIn(String email)throws IOException {
+        File nFile= new File("");
+        Scanner read=new Scanner(nFile);
+
+        if(!email.isEmpty()&& Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            /*
+            * if it is not empty
+            * AND
+            * if it is in the java class for checking if it is an emails or not
+            */
+
+
+
+            return true;
+        }else{// empty email
+            return false;
+        }
+
 
     }
 

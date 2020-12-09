@@ -13,4 +13,5 @@
     <string name="wellcome">Wellcome</string>
     <string name="show_password1">Show Password</string>
     <string name="todo">TODO</string>
+    <string name="gender">Gender</string>
 </resources>
