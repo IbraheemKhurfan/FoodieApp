@@ -15,6 +15,7 @@ android:background="@drawable/foodie2"
         android:text="@string/sign_in"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
 
+        android:textColor="#FFFFFF"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +30,7 @@ android:background="@drawable/foodie2"
         android:layout_height="wrap_content"
         android:text="@string/wellcome"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@android:color/darker_gray"
+        android:textColor="@color/white"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,17 +59,17 @@ android:background="@drawable/foodie2"
         android:id="@+id/GenderText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/aldrich"
         android:text="@string/gender"
         android:textAlignment="textStart"
         android:textColor="#FDFCFC"
+
         android:textSize="35sp"
-        app:layout_constraintBottom_toTopOf="@+id/genderButton"
         app:layout_constraintHorizontal_bias="0.01"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Password1"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintTop_toBottomOf="@+id/Password1" />
 
     <EditText
 
@@ -214,7 +215,7 @@ android:background="@drawable/foodie2"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.585" />
+        app:layout_constraintVertical_bias="0.594" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -232,25 +233,17 @@ android:background="@drawable/foodie2"
         android:contentDescription="@string/todo" />
 
     <Button
-        android:id="@+id/genderButton"
-        android:layout_width="43dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="210dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/custom_input_gender"
-
-
-        android:backgroundTint="#FFFFFF"
-        android:paddingTop="50dp"
-        android:textColor="#FFFFFF"
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/switch1"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.091"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Password1"
-        app:layout_constraintVertical_bias="0.191" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.699"
+        android:background="@color/blue"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
