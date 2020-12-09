@@ -3,7 +3,10 @@ package com.example.foodieapp;
 import android.util.Patterns;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
@@ -43,18 +46,23 @@ public class Utiels {
 
     }
     public static  boolean emailValidationSignIn(String email)throws IOException {
-        File nFile= new File("");
-        Scanner read=new Scanner(nFile);
-
         if(!email.isEmpty()&& Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             /*
             * if it is not empty
             * AND
             * if it is in the java class for checking if it is an emails or not
             */
-
-
-
+            File nFile= new File("Data.txt");//Go check email
+            if(!nFile.exists())// if it is not there
+                nFile.createNewFile();
+            Scanner read=new Scanner(nFile);//read From file
+            while(read.hasNext()){//go on all emails
+                read.nextInt();//ID
+                read.next();//Name
+                if(email.equals(read.next())){// if email is found return false
+                    return false;
+                }
+            }
             return true;
         }else{// empty email
             return false;
@@ -62,6 +70,40 @@ public class Utiels {
 
 
     }
+    public static void addUser(String name,String email,String password,String gender ) throws IOException{
+        int id=name.hashCode()+email.hashCode()+password.hashCode()+gender.hashCode();
+        if(id<=0){
+            throw new IllegalArgumentException("ID invalid");
+        }
+        ArrayList<Account> arr= new ArrayList<Account>();
+        Account acc=new Account(id,name,email,password,gender);
+        File nFile= new File("Data.txt");
+        FileWriter out=new FileWriter(nFile);
+        if(!nFile.exists())// if it is not there
+            nFile.createNewFile();
+        Scanner in=new Scanner(nFile);//read From file
+        while(in.hasNext()){//reading all accounts
+            int readID=in.nextInt();
+            String readName=in.next();
+            String readEmail=in.next();
+            String readPassword=in.next();
+            String readGender=in.next();
+            arr.add(new Account(readID,readName,readEmail,readPassword,readGender));
+        }
+        //adding the element for array to save it in the file
+        arr.add(acc);
+        for(int i=0;i<arr.size();i++){
+            out.write(arr.get(i).getId()+" ");
+            out.write(arr.get(i).getName()+" ");
+            out.write(arr.get(i).getEmail()+" ");
+            out.write(arr.get(i).getPassword()+" ");
+            out.write(arr.get(i).getGender()+" ");
+        }
+        out.close();
+
+
+    }
+
 
 
 

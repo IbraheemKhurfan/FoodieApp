@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-android:background="@drawable/foodie2"
+    android:background="@drawable/foodie2"
 
     tools:context=".MainActivity">
 
@@ -19,25 +19,23 @@ android:background="@drawable/foodie2"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.036"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.057" />
+        app:layout_constraintVertical_bias="0.092" />
 
     <TextView
         android:id="@+id/signIn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/wellcome"
+        android:text="Welcome"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/white"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.143" />
+        app:layout_constraintVertical_bias="0.019" />
 
     <TextView
         android:id="@+id/PasswordText"
@@ -66,10 +64,12 @@ android:background="@drawable/foodie2"
         android:textColor="#FDFCFC"
 
         android:textSize="35sp"
-        app:layout_constraintHorizontal_bias="0.01"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.021"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Password1" />
+        app:layout_constraintTop_toBottomOf="@+id/Password1"
+        app:layout_constraintVertical_bias="0.051" />
 
     <EditText
 
@@ -129,15 +129,15 @@ android:background="@drawable/foodie2"
         android:layout_marginBottom="8dp"
         android:autofillHints=""
 
-        android:drawableStart="@drawable/custom_email_icon"
         android:background="@drawable/custom_input"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
+        android:drawableStart="@drawable/custom_email_icon"
         android:drawablePadding="10dp"
-
         android:ems="10"
         android:hint="@string/enter_your_email"
+
         android:inputType="textEmailAddress"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
         android:textAlignment="textStart"
         android:textColor="@color/white"
         android:textColorHint="#F8F7F7"
@@ -147,8 +147,7 @@ android:background="@drawable/foodie2"
         app:layout_constraintHorizontal_bias="0.085"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.985"
-        />
+        app:layout_constraintVertical_bias="0.985" />
 
     <TextView
         android:id="@+id/EmailTextView"
@@ -169,33 +168,19 @@ android:background="@drawable/foodie2"
 
     <Button
         android:id="@+id/button"
-        android:layout_width="54dp"
-        android:layout_height="50dp"
+        android:layout_width="71dp"
+        android:layout_height="67dp"
         android:background="@drawable/enter"
+
         android:fontFamily="@font/aldrich"
         android:onClick="testClick"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.746"
-        app:layout_constraintStart_toEndOf="@+id/Password"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.846" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/aldrich"
-        android:text="@string/test"
-        android:textColor="#FAF4F4"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.889"
+        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.964" />
+        app:layout_constraintVertical_bias="0.86" />
 
     <Switch
         android:id="@+id/switch1"
@@ -214,36 +199,43 @@ android:background="@drawable/foodie2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.594" />
+        app:layout_constraintTop_toBottomOf="@+id/Password1"
+        app:layout_constraintVertical_bias="0.031" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="111dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="158dp"
-        android:layout_marginTop="221dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/EmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/EmailTextView"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_person_24"
-        android:contentDescription="@string/todo" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
+    <RadioGroup
+        android:id="@+id/genderChoice"
+        android:layout_width="187dp"
+        android:layout_height="91dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.091"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.699"
-        android:background="@color/blue"/>
+        app:layout_constraintTop_toBottomOf="@+id/GenderText"
+
+
+        app:layout_constraintVertical_bias="0.060000002">
+
+        <RadioButton
+            android:id="@+id/Male"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:checked="true"
+
+            android:layout_marginBottom="10dp"
+            android:drawableStart="@drawable/male"
+            android:drawablePadding="10dp"
+            android:text="@string/male"
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/Female"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:drawableStart="@drawable/woman"
+            android:drawablePadding="10dp"
+            android:text="@string/female"
+            android:textColor="@color/white" />
+    </RadioGroup>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
